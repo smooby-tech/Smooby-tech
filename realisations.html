@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Réalisations - Smooby Tech</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f4f7f9; }
+        nav { background: #004aad; padding: 15px; text-align: center; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
+        
+        .header { background: #004aad; color: white; padding: 40px; text-align: center; }
+        
+        .gallery-container { 
+            max-width: 1000px; 
+            margin: 20px auto; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            padding: 15px; 
+        }
+        
+        .project-card { 
+            background: white; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        }
+        
+        .project-card img { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: cover; 
+            border-bottom: 4px solid #ffcc00;
+        }
+        
+        .project-info { padding: 15px; }
+        .project-info h3 { margin: 0; color: #004aad; }
+        .project-info p { color: #666; font-size: 0.9rem; margin: 10px 0 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="blog.html">Conseils</a>
+        <a href="realisations.html" style="border-bottom: 2px solid #ffcc00;">Réalisations</a>
+        <a href="diagnostic.html">Diagnostic</a>
+    </nav>
+
+    <div class="header">
+        <h1>Nos Travaux sur le Terrain</h1>
+        <p>Découvrez la qualité des installations Smooby Tech à Lubumbashi.</p>
+    </div>
+
+    <div class="gallery-container">
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600" alt="Installation tableau">
+            <div class="project-info">
+                <h3>Installation Résidentielle</h3>
+                <p>Câblage complet d'une villa au quartier Golf. Mise en conformité et protection contre les surtensions.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1509391366360-fe5bb584850a?auto=format&fit=crop&w=600" alt="Installation Solaire">
+            <div class="project-info">
+                <h3>Kit Solaire Autonome</h3>
+                <p>Installation de 6 panneaux avec onduleur hybride pour une autonomie totale 24h/24.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600" alt="Maintenance Industrielle">
+            <div class="project-info">
+                <h3>Maintenance Boutique</h3>
+                <p>Réfection de l'éclairage LED et sécurisation du circuit de climatisation au Centre-Ville.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
