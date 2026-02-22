@@ -221,10 +221,55 @@
             <span class="testimonial-author">- Entreprise J.M., Centre-Ville</span>
         </div>
     </div>
+        <div class="quote-form">
+    <h2>Demander un Devis Gratuit</h2>
+    <form id="devisForm">
+        <div class="form-group">
+            <label>Votre Nom</label>
+            <input type="text" id="nom" placeholder="Ex: Jean Mukendi" required>
+        </div>
+        <div class="form-group">
+            <label>Quartier (Lubumbashi)</label>
+            <input type="text" id="quartier" placeholder="Ex: Golf, Bel-Air, Ruashi..." required>
+        </div>
+        <div class="form-group">
+            <label>Type de Travaux</label>
+            <select id="travaux">
+                <option value="Dépannage Urgent">Dépannage Urgent</option>
+                <option value="Installation Solaire">Installation Solaire</option>
+                <option value="Mise en conformité">Mise en conformité</option>
+                <option value="Éclairage LED">Éclairage LED</option>
+                <option value="Autre">Autre projet</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Description du projet</label>
+            <textarea id="message" rows="4" placeholder="Décrivez brièvement votre besoin..."></textarea>
+        </div>
+        <button type="button" class="btn-submit" onclick="envoyerDevis()">Envoyer la demande via WhatsApp</button>
+    </form>
+</div>
+
+<script>
+function envoyerDevis() {
+    const nom = document.getElementById('nom').value;
+    const quartier = document.getElementById('quartier').value;
+    const travaux = document.getElementById('travaux').value;
+    const message = document.getElementById('message').value;
+    
+    const numeroWhatsApp = "243XXXXXXXXX"; // REMPLACE PAR TON NUMÉRO ICI
+    
+    const texte = `Bonjour Smooby Tech ! %0A%0A*Nouvelle demande de devis*%0A------------------------%0A*Nom:* ${nom}%0A*Quartier:* ${quartier}%0A*Besoin:* ${travaux}%0A*Détails:* ${message}`;
+    
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${texte}`, '_blank');
+}
+    </script>
+        
     </section>
     
 </body>
 </html>
+
 
 
 
