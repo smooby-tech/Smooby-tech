@@ -106,6 +106,23 @@
             <a href="https://wa.me/243XXXXXXXXX" style="color: #004aad; font-weight: bold; text-decoration: none;">Posez votre question sur WhatsApp →</a>
         </div>
     </div>
+<script>
+function searchBlog() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let articles = document.getElementsByClassName('article-card');
 
+    for (let i = 0; i < articles.length; i++) {
+        let title = articles[i].getElementsByClassName('article-title')[0].innerText.toLowerCase();
+        let text = articles[i].getElementsByClassName('article-text')[0].innerText.toLowerCase();
+        
+        if (title.includes(input) || text.includes(input)) {
+            articles[i].style.display = "";
+        } else {
+            articles[i].style.display = "none";
+        }
+    }
+}
+</script>
+    
 </body>
 </html>
