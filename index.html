@@ -3,109 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smooby Tech - Électricité Professionnelle Lubumbashi</title>
+    <title>Smooby Tech - Expert Électricien à Lubumbashi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- STYLE GÉNÉRAL --- */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f4f7f9; color: #333; }
-        
-        nav { background: #004aad; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-        nav a:hover { color: #ffcc00; }
+        :root {
+            --primary: #004aad;
+            --secondary: #ffcc00;
+            --dark: #1a1a1a;
+            --light: #f4f7f9;
+            --success: #25d366;
+        }
 
-        .hero { background: linear-gradient(135deg, #004aad 0%, #002b66 100%); color: white; padding: 80px 20px; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; }
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { margin: 0; padding: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        /* --- NAVIGATION --- */
+        nav { background: var(--primary); padding: 1rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; gap: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav a { color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: var(--secondary); }
 
-        /* --- SECTION SERVICES --- */
-        .section-title { text-align: center; color: #004aad; margin-bottom: 40px; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .service-card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .service-card h3 { color: #004aad; }
+        /* --- HERO SECTION --- */
+        .hero { 
+            background: linear-gradient(rgba(0,74,173,0.8), rgba(0,74,173,0.8)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200');
+            background-size: cover; background-position: center;
+            height: 80vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
+        }
+        .hero h1 { font-size: 3rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 20px 0; }
+        .btn-main { background: var(--secondary); color: var(--primary); padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(255,204,0,0.4); }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255,204,0,0.6); }
 
-        /* --- SECTION TÉMOIGNAGES --- */
-        .testimonials { background: #eef2f7; padding: 60px 20px; border-radius: 20px; margin-top: 40px; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
-        .testimonial-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 5px solid #ffcc00; }
-        .stars { color: #ffcc00; margin-bottom: 10px; }
-        .testimonial-text { font-style: italic; color: #555; }
-        .testimonial-author { display: block; margin-top: 15px; font-weight: bold; color: #004aad; }
+        /* --- SECTIONS --- */
+        .section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { color: var(--primary); font-size: 2rem; margin-bottom: 10px; }
+        .section-title .bar { width: 60px; height: 4px; background: var(--secondary); margin: 0 auto; }
 
-        /* --- BOUTON WHATSAPP FLOTTANT --- */
+        /* --- RÉALISATIONS (GRILLE) --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 20px; }
+        .card-content h3 { margin: 0 0 10px 0; color: var(--primary); }
+
+        /* --- TÉMOIGNAGES --- */
+        .testimonials { background: var(--primary); color: white; padding: 60px 20px; text-align: center; }
+        .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .testi-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(5px); }
+        .stars { color: var(--secondary); margin-bottom: 10px; }
+
+        /* --- WHATSAPP FLOTTANT --- */
         .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 20px; right: 20px;
-            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
-            font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000;
-            display: flex; align-items: center; justify-content: center; text-decoration: none;
-            transition: transform 0.3s; animation: pulse 2s infinite;
+            position: fixed; width: 65px; height: 65px; bottom: 30px; right: 30px; background: var(--success);
+            color: white; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+            z-index: 2000; display: flex; align-items: center; justify-content: center; text-decoration: none;
+            animation: pulse 2s infinite;
         }
-        .whatsapp-float:hover { transform: scale(1.1); color: white; }
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        footer { background: var(--dark); color: white; text-align: center; padding: 40px 20px; font-size: 0.9rem; }
 
-        @media (max-width: 600px) { .hero h1 { font-size: 1.8rem; } }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav { gap: 10px; font-size: 0.7rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="index.html">Accueil</a>
-        <a href="realisations.html">Réalisations</a>
+        <a href="realisations.html">Projets</a>
         <a href="blog.html">Conseils</a>
         <a href="diagnostic.html">Diagnostic</a>
     </nav>
 
-    <div class="hero">
-        <h1>Smooby Tech</h1>
-        <p>L'expertise électrique de confiance à Lubumbashi</p>
-    </div>
+    <header class="hero">
+        <h1>SMOOBY TECH</h1>
+        <p>L'excellence électrique à Lubumbashi. Solaire, Dépannage et Installations Industrielles.</p>
+        <a href="#contact" class="btn-main">Demander un Devis</a>
+    </header>
 
-    <div class="container">
-        <h2 class="section-title">Nos Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>⚡ Dépannage</h3>
-                <p>Intervention rapide pour pannes de courant et court-circuit.</p>
+    <section class="section">
+        <div class="section-title">
+            <h2>Nos Services Experts</h2>
+            <div class="bar"></div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=500" alt="Solaire">
+                <div class="card-content">
+                    <h3>Énergie Solaire</h3>
+                    <p>Installation de kits complets pour une autonomie totale face aux coupures.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>☀️ Solaire</h3>
-                <p>Installation de panneaux et maintenance de batteries.</p>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1558444479-c8f0105282ab?auto=format&fit=crop&w=500" alt="Dépannage">
+                <div class="card-content">
+                    <h3>Maintenance & Dépannage</h3>
+                    <p>Intervention rapide 24h/7j pour tous vos problèmes électriques.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>🏠 Installation</h3>
-                <p>Câblage complet de bâtiments neufs et rénovations.</p>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=500" alt="Protection">
+                <div class="card-content">
+                    <h3>Protection Tension</h3>
+                    <p>Sécurisez vos appareils contre les variations de tension de la SNEL.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <section class="testimonials">
-            <h2 class="section-title">Avis Clients</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★</div>
-                    <p class="testimonial-text">"Travail impeccable pour mon installation solaire au Golf. Très professionnel."</p>
-                    <span class="testimonial-author">- M. Kabange</span>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★</div>
-                    <p class="testimonial-text">"Smooby Tech a réglé mes problèmes de tension rapidement. Je recommande !"</p>
-                    <span class="testimonial-author">- Mme Lucie</span>
-                </div>
+    <section class="testimonials">
+        <div class="section-title">
+            <h2 style="color: white;">Ils nous font confiance</h2>
+            <div class="bar"></div>
+        </div>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>"Professionnel et honnête. Le système solaire installé fonctionne parfaitement."</p>
+                <strong>- M. Kalenga (Golf)</strong>
             </div>
-        </section>
-    </div>
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>"Enfin un électricien qui respecte les normes à Lubumbashi. Travail soigné !"</p>
+                <strong>- Mme Naweji (Joli Site)</strong>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Smooby Tech - Lubumbashi, RDC</p>
+    <footer id="contact">
+        <p><strong>Smooby Tech - Lubumbashi, RDC</strong></p>
+        <p>Expertise certifiée & Solutions durables</p>
+        <div style="margin-top: 20px; opacity: 0.6;">&copy; 2026 Smooby Tech. Tous droits réservés.</div>
     </footer>
 
-    <a href="https://wa.me/243999704541?text=Bonjour%20Smooby%20Tech,%20j'ai%20vu%20votre%20site%20et%20j'ai%20besoin%20d'un%20expert." class="whatsapp-float" target="_blank">
-        <span style="font-weight: bold;">WA</span>
+    <a href="https://wa.me/243XXXXXXXXX?text=Bonjour%20Smooby%20Tech,%20je%20souhaite%20un%20devis%20pour%20un%20projet." class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="35">
     </a>
 
 </body>
